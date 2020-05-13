@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,6 +39,19 @@ public class PlayerController : MonoBehaviour
             health--;
             other.gameObject.SetActive(true);
             Debug.Log("Health: " + health.ToString());
+        }
+        if(other.gameObject.CompareTag("Goal"))
+        {
+            other.gameObject.SetActive(true);
+            Debug.Log("You win!");
+        }
+    }
+    void Update()
+    {
+        if(health == 0)
+        {
+            Debug.Log("Game Over!");
+            SceneManager.LoadScene(0);
         }
     }
 }
