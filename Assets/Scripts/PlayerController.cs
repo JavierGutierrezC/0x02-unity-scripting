@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // Speed in which the ball wil move can be change in Unity
     public float speed;
+    public int health = 5;
     private Rigidbody rb;
     private int score = 0;
     // Start is called before the first frame update
@@ -31,6 +32,12 @@ public class PlayerController : MonoBehaviour
             score++;
             other.gameObject.SetActive(false);
             Debug.Log("Score: " + score.ToString());
+        }
+        if(other.gameObject.CompareTag("Trap"))
+        {
+            health--;
+            other.gameObject.SetActive(true);
+            Debug.Log("Health: " + health.ToString());
         }
     }
 }
