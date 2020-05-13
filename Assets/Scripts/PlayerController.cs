@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Speed in which the ball wil move can be change in Unity
     public float speed;
     private Rigidbody rb;
+    private int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,13 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * speed);
     }
     // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if(other.gameObject.CompareTag("Pickup"))
+        {
+            score++;
+            other.gameObject.SetActive(false);
+            Debug.Log("Score: " + score.ToString());
+        }
     }
 }
