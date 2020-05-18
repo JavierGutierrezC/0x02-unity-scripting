@@ -29,7 +29,7 @@ Add a new ```public int health``` variable to your ```PlayerController.cs``` scr
 Create a new Plane GameObject named ```Goal```.
 
 ## 8. Goaaaaaaaaaaal 
-In ```PlayerController.cs```, add to the existing ```void OnTriggerEnter(Collider other)``` function:
+In ```PlayerController.cs```, add to the existing ```void OnTriggerEnter(Collider other)``` function.
 
 ## 9. Game over 
 Create an ```Update()``` function within ```PlayerController.cs```.
